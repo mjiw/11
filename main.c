@@ -4,22 +4,16 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	char *pc; //1바이트 
-	int *pi; //4바이트 
-	double *pd; //8바이트 
+	int i=100;
+	int *p=&i;
+	int **q=&p;
 	
-	pc=(char*)10000;
-	pi=(int*)10000;
-	pd=(double*)10000;
+	*p=200;
+	printf("i=%d, *p=%d, **q=%d\n",i,*p,**q);
 	
-	printf("증가 전: pc=%d, pi=%i, pd=%d\n",pc,pi,pd);
+	**q=300;
+	printf("i=%d, *p=%d, **q=%d\n",i,*p,**q);
 	
-	pc++;
-	pi++;
-	pd++;
 	
-	printf("증가 후: pc=%d, pi=%i. pd=%d\n",pc,pi,pd);
-	
-	 
 	return 0;
 }
